@@ -51,7 +51,7 @@
   .chip:hover{border-color:var(--fg)}
   .chip svg{width:15px;height:15px}
 
-  section{padding:36px 0;border-top:1px solid var(--line)}
+  section{padding:36px 0;border-top:1px solid var(--line);scroll-margin-top:56px}
   h2{font-size:22px;letter-spacing:-.02em;margin:0 0 20px}
 
   .feature{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:22px;border-radius:18px;background:var(--soft)}
@@ -84,6 +84,12 @@
   .card b{display:block;font-size:15px}
   .card span{font-size:13px;color:var(--muted)}
 
+  .card.private{cursor:default}
+  .card.private:hover{transform:none;border-color:var(--line)}
+  .card{position:relative}
+  .lock{position:absolute;top:8px;right:8px;font-size:11px;font-weight:700;padding:3px 8px;border-radius:999px;
+    background:rgba(17,17,19,.72);color:#fff;backdrop-filter:blur(4px)}
+  .note{margin:-8px 0 18px;color:var(--muted);font-size:14px}
   .skills{display:grid;grid-template-columns:150px 1fr;gap:8px 16px;margin:0}
   .skills dt{color:var(--muted);font-size:14px;padding-top:2px}
   .skills dd{margin:0}
@@ -116,6 +122,7 @@
       <a href="#research">Research</a>
       <a href="#work">Experience</a>
       <a href="#projects">Projects</a>
+      <a href="#private">Private</a>
       <a href="#awards">Awards</a>
       <a href="#skills">Skills</a>
       <a href="https://naeunkim.vercel.app/bio.html" target="_blank" rel="noopener">CV</a>
@@ -198,6 +205,19 @@
       <a class="card" href="https://wooeekim.github.io/Cake/" target="_blank" rel="noopener"><img src="assets/img/cake.jpg" alt="" loading="lazy"><div><b>케이크 만들기</b><span>ID202 · 2025 가을</span></div></a>
       <a class="card" href="https://wooeekim.github.io/ascii-motion/" target="_blank" rel="noopener"><img src="assets/img/ascii-motion.jpg" alt="" loading="lazy"><div><b>ASCII Motion</b><span>제너러티브</span></div></a>
       <a class="card" href="https://wooeekim.github.io/walk/" target="_blank" rel="noopener"><img src="assets/img/walk.jpg" alt="" loading="lazy"><div><b>삼각 진화 걷기</b><span>시뮬레이션</span></div></a>
+    </div>
+  </section>
+
+  <section id="private">
+    <h2>Private Projects</h2>
+    <p class="note">코드는 비공개라 화면만 소개해요. 라이브 서비스는 눌러서 열 수 있어요.</p>
+    <div class="grid">
+      <a class="card" href="https://exray.kr" target="_blank" rel="noopener"><img src="assets/img/exray.jpg" alt="" loading="lazy"><span class="lock">Private repo</span><div><b>엑스레이 EX-Ray</b><span>카톡을 AI가 읽고 이별 리포트로</span></div></a>
+      <div class="card private"><img src="assets/img/sumsum.jpg" alt="" loading="lazy"><span class="lock">Private repo</span><div><b>썸썸</b><span>카톡 캡처로 썸 판독하는 AI</span></div></div>
+      <div class="card private"><img src="assets/img/nerdlove.jpg" alt="" loading="lazy"><span class="lock">Private repo</span><div><b>NERD LOVE</b><span>공대 입학식 연애 시뮬레이션 게임</span></div></div>
+      <div class="card private"><img src="assets/img/gomsin-book.jpg" alt="" loading="lazy"><span class="lock">Private repo</span><div><b>곰신북</b><span>입대일부터 전역까지 우리의 복무 기록</span></div></div>
+      <a class="card" href="https://akpeul.vercel.app" target="_blank" rel="noopener"><img src="assets/img/akpeul.jpg" alt="" loading="lazy"><span class="lock">Private repo</span><div><b>악플수집기</b><span>릴스 악플을 법적 증거 PDF로</span></div></a>
+      <div class="card private"><img src="assets/img/dev-menu.jpg" alt="" loading="lazy"><span class="lock">Private repo</span><div><b>구스앤덕스 개발 메뉴판</b><span>지원사업 외주용 개발 단가표</span></div></div>
     </div>
   </section>
 
