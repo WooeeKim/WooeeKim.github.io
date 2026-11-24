@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>김나은 · Naeun Kim</title>
+<meta name="description" content="사랑에 관한 걸 만들어요. 가끔 그리고, 종종 팝니다. KAIST 산업디자인 · GOOSE&DUCKS 대표.">
+<meta property="og:title" content="김나은 · Naeun Kim">
+<meta property="og:description" content="사랑에 관한 걸 만들어요. 가끔 그리고, 종종 팝니다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wooeekim.github.io/">
+<meta property="og:image" content="https://wooeekim.github.io/assets/img/og.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root{
+    --bg:#ffffff; --fg:#1d1d1f; --muted:#6e6e73; --line:#e8e8ed; --soft:#f5f5f7;
+    --accent:#e0457b; --accent-soft:#fdecf2;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#111113; --fg:#f2f2f4; --muted:#9a9aa2; --line:#2a2a2e; --soft:#1b1b1e;
+      --accent:#ff6f9f; --accent-soft:#2a1620;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",sans-serif;
+    font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;word-break:keep-all}
+  a{color:inherit}
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px}
+
+  header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);
+    backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:56px}
+  .logo{font-weight:800;text-decoration:none;letter-spacing:-.02em;white-space:nowrap}
+  nav{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none}
+  nav::-webkit-scrollbar{display:none}
+  nav a{text-decoration:none;color:var(--muted);font-size:14px;white-space:nowrap}
+  nav a:hover{color:var(--fg)}
+
+  .hero{display:grid;grid-template-columns:168px 1fr;gap:36px;align-items:center;padding:64px 0 48px}
+  .avatar{width:168px;height:168px;border-radius:50%;object-fit:cover;background:var(--soft);border:1px solid var(--line)}
+  .hero h1{margin:0 0 4px;font-size:34px;letter-spacing:-.03em;line-height:1.25}
+  .hero h1 small{font-size:18px;color:var(--muted);font-weight:500;margin-left:6px}
+  .tag{margin:0 0 14px;color:var(--accent);font-weight:600}
+  .hero p{margin:0 0 10px}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .chip{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid var(--line);
+    border-radius:999px;text-decoration:none;font-size:14px}
+  .chip:hover{border-color:var(--fg)}
+  .chip svg{width:15px;height:15px}
+
+  section{padding:36px 0;border-top:1px solid var(--line)}
+  h2{font-size:22px;letter-spacing:-.02em;margin:0 0 20px}
+
+  .feature{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:22px;border-radius:18px;background:var(--soft)}
+  .feature img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px}
+  .feature .label{display:inline-block;font-size:12px;font-weight:700;color:var(--accent);background:var(--accent-soft);
+    padding:3px 9px;border-radius:999px;margin-bottom:8px}
+  .feature h3{margin:0 0 6px;font-size:22px}
+  .feature p{margin:0 0 12px}
+  .stats{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;color:var(--muted);margin-bottom:14px}
+  .stats b{color:var(--fg)}
+  .btn{display:inline-block;padding:9px 16px;border-radius:10px;background:var(--fg);color:var(--bg);
+    text-decoration:none;font-size:14px;font-weight:600;margin:0 6px 6px 0}
+  .btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+
+  .list{list-style:none;margin:0;padding:0}
+  .list li{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:12px 0}
+  .list li+li{border-top:1px dashed var(--line)}
+  .when{color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums;padding-top:2px}
+  .what b{font-weight:700}
+  .what a{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+  .what a:hover{text-decoration-color:var(--accent)}
+  .what .role{color:var(--muted)}
+  .what .desc{display:block;font-size:14px;color:var(--muted);margin-top:2px}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .card{display:block;text-decoration:none;border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:transform .15s,border-color .15s}
+  .card:hover{transform:translateY(-2px);border-color:var(--fg)}
+  .card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--soft)}
+  .card div{padding:10px 12px 12px}
+  .card b{display:block;font-size:15px}
+  .card span{font-size:13px;color:var(--muted)}
+
+  .skills{display:grid;grid-template-columns:150px 1fr;gap:8px 16px;margin:0}
+  .skills dt{color:var(--muted);font-size:14px;padding-top:2px}
+  .skills dd{margin:0}
+
+  footer{border-top:1px solid var(--line);padding:32px 0 48px;text-align:center;color:var(--muted);font-size:14px}
+  footer .icons{display:flex;justify-content:center;gap:18px;margin-bottom:10px}
+  footer .icons a{color:var(--muted)}
+  footer .icons a:hover{color:var(--fg)}
+  footer svg{width:22px;height:22px}
+
+  @media (max-width:640px){
+    .hero{grid-template-columns:1fr;gap:20px;padding:40px 0 32px;text-align:left}
+    .avatar{width:112px;height:112px}
+    .hero h1{font-size:28px}
+    .feature{grid-template-columns:1fr}
+    .feature img{max-width:160px}
+    .list li,.skills{grid-template-columns:1fr;gap:2px}
+    .skills dd{margin-bottom:10px}
+    .grid{grid-template-columns:repeat(2,1fr)}
+    nav{gap:14px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">김나은</a>
+    <nav>
+      <a href="#ventures">Ventures</a>
+      <a href="#research">Research</a>
+      <a href="#work">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#awards">Awards</a>
+      <a href="#skills">Skills</a>
+      <a href="https://naeunkim.vercel.app/bio.html" target="_blank" rel="noopener">CV</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <div class="hero">
+    <img class="avatar" src="assets/img/avatar.svg" alt="김나은 프로필">
+    <div>
+      <h1>김나은<small>Naeun Kim</small></h1>
+      <p class="tag">사랑에 관한 걸 만들어요. 가끔 그리고, 종종 팝니다.</p>
+      <p><b>KAIST 산업디자인학과</b>에 다니고 있어요. 전기및전자공학부에서 전과했어요. <b>주식회사 구스앤덕스(GOOSE&amp;DUCKS)</b> 대표로 이공계 대학원생 네트워킹 플랫폼 <b>랩미 LabMeet</b>와 말로 PCB를 설계하는 <b>워콘 Werkon</b>을 만들고 있어요.</p>
+      <p>디자인, 모션, 인터랙티브, 웹·앱 개발을 오가며 <b>사람 사이의 관계</b>를 다루는 서비스와 작품을 만들어요. 인스타툰 <b>@aroom.toon</b>도 그려요.</p>
+      <div class="links">
+        <a class="chip" href="mailto:thisisjinsim@naver.com">✉️ 메일</a>
+        <a class="chip" href="https://github.com/WooeeKim" target="_blank" rel="noopener">GitHub</a>
+        <a class="chip" href="https://instagram.com/kimwooee" target="_blank" rel="noopener">@kimwooee</a>
+        <a class="chip" href="https://instagram.com/lilxaeun" target="_blank" rel="noopener">@lilxaeun</a>
+        <a class="chip" href="https://naeunkim.vercel.app" target="_blank" rel="noopener">포트폴리오 ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="ventures">
+    <h2>Featured</h2>
+    <div class="feature">
+      <img src="assets/img/labmeet.jpg" alt="랩미 LabMeet">
+      <div>
+        <span class="label">GOOSE&amp;DUCKS · 대표</span>
+        <h3>랩미 LabMeet</h3>
+        <p>이공계 대학원생을 위한 네트워킹 플랫폼. 기획부터 운영까지 맡고 있어요.</p>
+        <div class="stats">
+          <span>매출 <b>약 2,000만 원</b></span>
+          <span>기획 파티 <b>20회 연속 매진</b></span>
+          <span>단독 행사 최대 <b>200명</b></span>
+          <span>KAMF 공식 파트너 부스 <b>2,000명</b></span>
+        </div>
+        <a class="btn" href="https://labmeet.love" target="_blank" rel="noopener">labmeet.love</a>
+        <a class="btn ghost" href="https://naeunkim.vercel.app/gooseducks.html" target="_blank" rel="noopener">구스앤덕스 소개</a>
+      </div>
+    </div>
+    <ul class="list" style="margin-top:12px">
+      <li><span class="when">2026.04 ~ 현재</span><span class="what"><b>워콘 Werkon</b> <span class="role">(구 vibePCB) · 기획 · UX/UI · 마케팅</span><span class="desc">말로 설명하면 LLM이 PCB를 설계·검증하고 7일 안에 완제품으로. PCB Bench(ICLR 2026) 전 태스크 1위, IDOLL ROBOTICS PoC 협약</span></span></li>
+      <li><span class="when">2026 ~ 현재</span><span class="what"><a href="https://exray.kr" target="_blank" rel="noopener"><b>엑스레이 EX-Ray</b></a> <span class="role">· 자체 개발 서비스</span><span class="desc">HCI 기반 재회 상담 디자인 솔루션, 수익 파이프라인 구축</span></span></li>
+    </ul>
+  </section>
+
+  <section id="research">
+    <h2>Research Experience</h2>
+    <ul class="list">
+      <li><span class="when">2025.12 ~ 현재</span><span class="what"><b>KAIST Visual Instruments Lab</b> <span class="role">· 연구 인턴</span><span class="desc">산업디자인학과 강이룬 교수</span></span></li>
+      <li><span class="when">2026.05 ~ 2026.06</span><span class="what"><b>KAIST Color Lab</b> <span class="role">· 단기 연구 인턴</span><span class="desc">산업디자인학과 석현정 교수</span></span></li>
+      <li><span class="when">5개월</span><span class="what"><b>Refill</b> <span class="role">· 핵심 연구원</span><span class="desc">기후기술 스타트업. 박테리오파지 활용 CO₂ 포집 모듈 개발</span></span></li>
+      <li><span class="when">UNIST 공동 연구</span><span class="what"><b>혐기성 미세조류 CO₂ 포집 · 바이오매스 개발</b><span class="desc">크로마토그래피로 N, P 최적 배양비 탐구</span></span></li>
+    </ul>
+  </section>
+
+  <section id="work">
+    <h2>Experience</h2>
+    <ul class="list">
+      <li><span class="when">2026.10 ~ 현재</span><span class="what"><b>KAIST Entrepreneurs (KE)</b> <span class="role">· 회장</span><span class="desc">카이스트 창업학회, 40명 규모 조직 리딩</span></span></li>
+      <li><span class="when">2026</span><span class="what"><b>KAIST 창업원</b> <span class="role">· 아트디렉터</span><span class="desc">2026 딥테크 사업화 페스티벌, 10월 행사</span></span></li>
+      <li><span class="when">1년</span><span class="what"><b>StayWit</b> <span class="role">· 대표 겸 PM</span><span class="desc">층간소음 해결 플랫폼</span></span></li>
+      <li><span class="when">1년</span><span class="what"><b>Keeper</b> <span class="role">· Project Leader</span><span class="desc">스마트 자세교정 IoT 디바이스</span></span></li>
+      <li><span class="when">2023.07 ~ 2024.01</span><span class="what"><b>게임공장</b> <span class="role">· 프로그램 매니저</span><span class="desc">데이터 시각화</span></span></li>
+      <li><span class="when">2024.01 ~ 2025.04</span><span class="what"><b>KAIST 전기및전자공학부 학생회</b> <span class="role">· 학생회장 대행 / 부학생회장</span></span></li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+      <a class="card" href="https://naeunkim.vercel.app/works/cardcapturecollect.html" target="_blank" rel="noopener"><img src="assets/img/subwayseal.jpg" alt="" loading="lazy"><div><b>card capture collect</b><span>ID304 · 2026 가을</span></div></a>
+      <a class="card" href="https://naeunkim.vercel.app/works/mitzy.html" target="_blank" rel="noopener"><img src="assets/img/mitzy.jpg" alt="" loading="lazy"><div><b>믿쥐 Mitzy</b><span>ID40003 · AI 보조 셰프</span></div></a>
+      <a class="card" href="https://wooeekim.github.io/skysandwich/" target="_blank" rel="noopener"><img src="assets/img/skysandwich.jpg" alt="" loading="lazy"><div><b>스카이샌드위치</b><span>인터랙티브 웹 · 2026</span></div></a>
+      <a class="card" href="https://wooeekim.github.io/Marriage/" target="_blank" rel="noopener"><img src="assets/img/marriage.jpg" alt="" loading="lazy"><div><b>혼인 데이터 시각화</b><span>2025</span></div></a>
+      <a class="card" href="https://wooeekim.github.io/running-bgm/" target="_blank" rel="noopener"><img src="assets/img/running-bgm.jpg" alt="" loading="lazy"><div><b>Running BGM</b><span>ID412 · 2025 가을</span></div></a>
+      <a class="card" href="https://wooeekim.github.io/Cake/" target="_blank" rel="noopener"><img src="assets/img/cake.jpg" alt="" loading="lazy"><div><b>케이크 만들기</b><span>ID202 · 2025 가을</span></div></a>
+      <a class="card" href="https://wooeekim.github.io/ascii-motion/" target="_blank" rel="noopener"><img src="assets/img/ascii-motion.jpg" alt="" loading="lazy"><div><b>ASCII Motion</b><span>제너러티브</span></div></a>
+      <a class="card" href="https://wooeekim.github.io/walk/" target="_blank" rel="noopener"><img src="assets/img/walk.jpg" alt="" loading="lazy"><div><b>삼각 진화 걷기</b><span>시뮬레이션</span></div></a>
+    </div>
+  </section>
+
+  <section id="awards">
+    <h2>Awards &amp; Selections</h2>
+    <ul class="list">
+      <li><span class="when">출품 준비 중</span><span class="what"><b>Red Dot Award</b><span class="desc">화성건설 산학 협력 홈패널 UI 및 제품 디자인</span></span></li>
+      <li><span class="when">2026</span><span class="what"><b>모두의 창업 1·2기</b> 연속 선발<span class="desc">주식회사 구스앤덕스</span></span></li>
+      <li><span class="when">2026</span><span class="what"><b>KAIST 홀딩스 PDSP</b> 연구 과제 선정<span class="desc">워콘 Werkon (구 vibePCB)</span></span></li>
+      <li><span class="when">2026</span><span class="what"><b>GRAFFITI 스타트업 해커톤</b> 창업 프로그램 선정<span class="desc">워콘 Werkon</span></span></li>
+      <li><span class="when">2026</span><span class="what"><b>창업중심대학</b> 사업화 지원 프로그램 1차 선정<span class="desc">Keeper 프로젝트 PL</span></span></li>
+      <li><span class="when">2026.05 · 2026.11</span><span class="what"><b>KAIST 물리학과 차담회</b> 키비주얼 디자인 선정</span></li>
+    </ul>
+  </section>
+
+  <section id="edu">
+    <h2>Education</h2>
+    <ul class="list">
+      <li><span class="when">2026 ~ 현재</span><span class="what"><b>KAIST 산업디자인학과</b><span class="desc">전과 · ID202 · ID304 · ID412 · ID40003</span></span></li>
+      <li><span class="when">2024 ~ 2026</span><span class="what"><b>KAIST 전기및전자공학부</b></span></li>
+      <li><span class="when">2023</span><span class="what"><b>KAIST 새내기과정학부</b> 입학</span></li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>디자인</dt><dd>Figma · Illustrator · 드로잉 · 일러스트</dd>
+      <dt>모션 · 영상</dt><dd>After Effects · Premiere Pro · Remotion</dd>
+      <dt>인터랙티브</dt><dd>TouchDesigner · p5.js · Three.js · React Three Fiber</dd>
+      <dt>웹 · 앱</dt><dd>TypeScript · React · Next.js · Tailwind CSS · React Native · Expo</dd>
+      <dt>백엔드 · AI</dt><dd>Supabase · Vercel · Claude API · OpenAI API</dd>
+    </dl>
+  </section>
+</main>
+
+<footer>
+  <div class="icons">
+    <a href="mailto:thisisjinsim@naver.com" aria-label="메일"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+    <a href="https://github.com/WooeeKim" aria-label="GitHub" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg></a>
+    <a href="https://instagram.com/kimwooee" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+  </div>
+  © 2026 Naeun Kim
+</footer>
+</body>
+</html>
